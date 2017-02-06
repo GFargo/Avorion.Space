@@ -1,0 +1,16 @@
+[Unit]
+Description=Avorion Dedicated Server via SteamCMD
+After=network.target
+
+[Service]
+Type=simple
+User=steam
+WorkingDirectory=/home/steam/Steam/avorion/
+StartLimitInterval=60s
+StartLimitBurst=3
+Restart=on-failure
+ExecStartPre=steamcmd +login anonymous +force_install_dir /home/steam/Steam/avorion/ +app_update 565060 +quit
+ExecStart=/home/steam/Steam/avorion/.server.sh
+
+[Install]
+WantedBy=multi-user.target

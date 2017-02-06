@@ -1,0 +1,2 @@
+cp linux64/steamclient.so ./steamclient.so
+bin/AvorionServer --galaxy-name avorion_galaxy --admin $USER "$@"
