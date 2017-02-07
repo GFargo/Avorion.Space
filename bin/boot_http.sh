@@ -6,3 +6,4 @@ if [ -z "$STY" ]; then exec screen -dm -S simpleHttp /bin/bash "$0"; fi
 
 cd /var/www/
 python -m SimpleHTTPServer 80
+

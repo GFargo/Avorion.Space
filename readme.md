@@ -43,7 +43,9 @@ These steps assume you have already spun up a fresh Ubuntu instance using one of
 
 
 Update permissions on `/srv` for steam user;
-`sudo usermod -a -G steam steam` followed by `chmod g+w /srv/`
+`usermod -a -G steam steam` followed by `chmod g+w /srv/`
+
+or push with root >_<
 
 #### Server Mods
 
