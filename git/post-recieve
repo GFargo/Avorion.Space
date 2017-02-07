@@ -22,7 +22,7 @@ rm -rf /var/www/
 rsync -rv /srv/avorion/http-server/ /var/www
 
 # Start simpleHttpServer
-cd /srv/avorion/bin/ && ./boot_http.sh`
+/bin/bash /srv/avorion/bin/boot_http.sh
 
 # rsync -rv /tmp/wp-content/ /srv/www/wordpress-live/wp-content
 
