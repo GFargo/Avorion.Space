@@ -42,6 +42,8 @@ These steps assume you have already spun up a fresh Ubuntu instance using one of
 14. Start the server via `./server.sh`
 
 
+Update permissions on `/srv` for steam user;
+`sudo usermod -a -G steam steam` followed by `chmod g+w /srv/`
 
 #### Server Mods
 

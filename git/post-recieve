@@ -13,6 +13,9 @@ git clone /var/git/avorion-server.git /srv/avorion
 
 ### Setup HTTP Server
 
+echo "\n....syncing web files..."
+rm -rf /var/www/
+
 # Sync files
 rsync -rv /srv/avorion/http-server/ /var/www
 
