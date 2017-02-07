@@ -4,8 +4,11 @@ echo "-----"
 echo "Avorion Server Deploy"
 echo "-----"
 echo ""
+
+echo "\n....removing old server files..."
 rm -rf /srv/avorion
 unset GIT_DIR
+echo "\n....cloning repo..."
 git clone /var/git/avorion-server.git /srv/avorion
 
 
@@ -19,8 +22,7 @@ rsync -rv /srv/avorion/http-server/ /var/www
 
 # rsync -rv /tmp/wp-content/ /srv/www/wordpress-live/wp-content
 
-# printf "\n....clean up..."
-# rm -rf /tmp/wp-content
+
 # printf "\n...fixing permissions on wp_content..."
 # chown -R nginx:nginx /srv/www/wordpress-live/wp-content
 
