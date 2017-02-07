@@ -2,6 +2,7 @@
 
 This guide takes you through the steps required to setup your own dedicated server for [Avorion](http://store.steampowered.com/app/445220/).
 
+
 [Join us on Discord](https://discord.gg/WafqdAH)
 
 ### Requirements
@@ -13,6 +14,8 @@ First we have to purchase and spin up our own VPS on one of the following provid
 - Lightsail
 
 https://joshtronic.com/2016/12/01/ten-dollar-showdown-linode-vs-digitalocean-vs-lightsail/
+
+I have chosen to host avorion.space with Linode.com
 
 ### Mods
 
