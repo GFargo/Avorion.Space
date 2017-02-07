@@ -19,11 +19,9 @@ https://joshtronic.com/2016/12/01/ten-dollar-showdown-linode-vs-digitalocean-vs-
 - [Out of Sector Production](http://www.avorion.net/forum/index.php/topic,1322.0.html)
 
 
-
 ## Setup
 
 These steps assume you have already spun up a fresh Ubuntu instance using one of the VPS providers above.
-
 
 1. Run `apt-get update && apt-get upgrade` to upgrade installed packages.
 2. Follow this [getting started guide](https://www.linode.com/docs/getting-started) to prepare server
