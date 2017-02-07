@@ -43,10 +43,6 @@ These steps assume you have already spun up a fresh Ubuntu instance using one of
 
 
 
-git remote add live ssh://root@avorion.space/var/git/avorion-server.git
-
-
-
 #### Server Mods
 
 
