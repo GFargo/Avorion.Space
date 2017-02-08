@@ -16,6 +16,8 @@ First we have to purchase and spin up our own VPS on one of the following provid
 https://joshtronic.com/2016/12/01/ten-dollar-showdown-linode-vs-digitalocean-vs-lightsail/
 
 I have chosen to host avorion.space with [Linode.com](http://linode.com).
+[Linode CLI](https://github.com/linode/cli)
+
 
 ### Mods
 
@@ -85,6 +87,15 @@ Enable your new systemd unit and start your ARK server: `systemctl enable ark.se
 
 * Q:
 
+### Install Resources:
+
+- [Repairing Git Permissions](http://stackoverflow.com/questions/6448242/git-push-error-insufficient-permission-for-adding-an-object-to-repository-datab)
+- [Git Post Receieve Not Running](http://stackoverflow.com/questions/8206023/git-post-receive-hook-not-running)
+- [Give Write Permission to Usergroup](http://askubuntu.com/questions/487527/give-specific-user-permission-to-write-to-a-folder-using-w-notation)
+- [Run a Shell Script in Screen](http://unix.stackexchange.com/questions/162133/run-script-in-a-screen)
+- [Setting up Automatic Deployment with Git](https://www.digitalocean.com/community/tutorials/how-to-set-up-automatic-deployment-with-git-with-a-vps)
+- [How to use Systemctl to manage services](https://www.digitalocean.com/community/tutorials/how-to-use-systemctl-to-manage-systemd-services-and-units)
+- [Automated Backups to Dropbox via Shellscript](http://www.howopensource.com/2014/09/simple-linux-backup-to-dropbox/)
 
 ### Resources:
 
