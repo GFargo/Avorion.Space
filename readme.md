@@ -6,7 +6,6 @@ This guide takes you through the steps required to setup your own dedicated serv
 [Join us on Discord](https://discord.gg/WafqdAH)
 
 
-
 ### Mods
 
 - [Out of Sector Production](http://www.avorion.net/forum/index.php/topic,1322.0.html)
@@ -26,9 +25,6 @@ This guide takes you through the steps required to setup your own dedicated serv
 
 * Q: How do I keep the server running after I close Terminal?
 	* Using Screens, check the section above on "Running Server via Screen" for more info.
-
-* Q:
-
 
 
 ### Resources:
