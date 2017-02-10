@@ -5,18 +5,6 @@ This guide takes you through the steps required to setup your own dedicated serv
 
 [Join us on Discord](https://discord.gg/WafqdAH)
 
-### Requirements
-
-First we have to purchase and spin up our own VPS on one of the following providers.
-
-- Linode
-- Digital Ocean
-- Lightsail
-
-https://joshtronic.com/2016/12/01/ten-dollar-showdown-linode-vs-digitalocean-vs-lightsail/
-
-I have chosen to host avorion.space with [Linode.com](http://linode.com).
-[Linode CLI](https://github.com/linode/cli)
 
 
 ### Mods
@@ -24,60 +12,14 @@ I have chosen to host avorion.space with [Linode.com](http://linode.com).
 - [Out of Sector Production](http://www.avorion.net/forum/index.php/topic,1322.0.html)
 
 
-## Setup
-
-These steps assume you have already spun up a fresh Ubuntu instance using one of the VPS providers above.
-
-1. Run `apt-get update && apt-get upgrade` to upgrade installed packages.
-2. Follow this [getting started guide](https://www.linode.com/docs/getting-started) to prepare server
-3. Follow this [sercuring your server](https://www.linode.com/docs/security/securing-your-server) guide, **skip firewall configuration**.
-4. Run `sudo dpkg --add-architecture i386`
-5. Run `sudo apt-get install lib32gcc1 lib32stdc++6 libc6-i386 libcurl4-gnutls-dev:i386 screen`
-6. Run `sudo apt-get install steamcmd`
-7. You should now have access to the `steamcmd` command, try running it in the console.  Should result
-8. Once in SteamCMD, enter `login anonymous`
-9. Now that we are logged in we need to install Avorion.
-10. Type in `force_install_dir /your/custom/path/`
-11. Next we need to download server files via `app_update 565060 validate`
-12. After this is complete we can leave SteamCMD via `quit` command
-13. Navigate to `/your/custom/path`
-14. Start the server via `./server.sh`
-
-
-Update permissions on `/srv` for steam user;
-`usermod -a -G steam steam` followed by `chmod g+w /srv/`
-
-or push with root >_<
-
-#### Server Mods
+#### Gam Mods
 
 
 - [TOOL - Mods Patch Generate & Apply](http://www.avorion.net/forum/index.php/topic,1304.0.html)
-
 - [Out of Sector Production](http://www.avorion.net/forum/index.php/topic,1322.0.html)
 - [Highlight Players in Sector](http://www.avorion.net/forum/index.php/topic,1286.0.html)
 - [/sethome /inventory commands](http://www.avorion.net/forum/index.php/topic,830.0.html)
 - [Wreckage Cleanup](http://www.avorion.net/forum/index.php/topic,1034.msg4628.html#msg4628)
-
-
-#### Running Server via Screen
-
-
-#### Backing Up Galaxies
-
-
-#### Setting Up HTTP Server
-
-1. Create new user via `useradd http`
-2. Run `mkdir /var/www/` to create the directory for page
-3. Now we need to make sure python is installed `apt-get install python`
-
-#### Custom Services
-
-Service files on linux located `/lib/systemd/system/`
-
-Update systemd to apply your changes: `systemctl daemon-reload`
-Enable your new systemd unit and start your ARK server: `systemctl enable ark.service` & `systemctl start ark`
 
 
 ### FAQ
@@ -87,19 +29,12 @@ Enable your new systemd unit and start your ARK server: `systemctl enable ark.se
 
 * Q:
 
-### Install Resources:
 
-- [Repairing Git Permissions](http://stackoverflow.com/questions/6448242/git-push-error-insufficient-permission-for-adding-an-object-to-repository-datab)
-- [Git Post Receieve Not Running](http://stackoverflow.com/questions/8206023/git-post-receive-hook-not-running)
-- [Give Write Permission to Usergroup](http://askubuntu.com/questions/487527/give-specific-user-permission-to-write-to-a-folder-using-w-notation)
-- [Run a Shell Script in Screen](http://unix.stackexchange.com/questions/162133/run-script-in-a-screen)
-- [Setting up Automatic Deployment with Git](https://www.digitalocean.com/community/tutorials/how-to-set-up-automatic-deployment-with-git-with-a-vps)
-- [How to use Systemctl to manage services](https://www.digitalocean.com/community/tutorials/how-to-use-systemctl-to-manage-systemd-services-and-units)
-- [Automated Backups to Dropbox via Shellscript](http://www.howopensource.com/2014/09/simple-linux-backup-to-dropbox/)
 
 ### Resources:
 
 - [Avorion Forums](http://www.avorion.net/forum/index.php)
+- [Avorion - Setting up a Server](http://avorion.gamepedia.com/Setting_up_a_server)
 - [How to Setup your Linode](http://feross.org/how-to-setup-your-linode/)
 - [Avorion API Documentation for Mods](http://stonelegion.com/Avorion/Documentation/)
 - [Mods List - Avorion Wiki](http://www.avorion.net/forum/index.php/topic,1100.0.html)
