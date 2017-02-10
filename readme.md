@@ -20,12 +20,10 @@ This guide takes you through the steps required to setup your own dedicated serv
 - [/sethome /inventory commands](http://www.avorion.net/forum/index.php/topic,830.0.html)
 - [Wreckage Cleanup](http://www.avorion.net/forum/index.php/topic,1034.msg4628.html#msg4628)
 
-
 ### FAQ
 
 * Q: How do I keep the server running after I close Terminal?
 	* Using Screens, check the section above on "Running Server via Screen" for more info.
-
 
 ### Resources:
 
