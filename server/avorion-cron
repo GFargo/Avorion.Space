@@ -1,3 +1,4 @@
+#!/bin/bash
 #
 #      ___   ____    ____  ______   .______       __    ______   .__   __.
 #     /   \  \   \  /   / /  __  \  |   _  \     |  |  /  __  \  |  \ |  |
@@ -11,4 +12,9 @@
 # Avorion Cron Jobs
 ############################################################################
 
-* 1 * * *     /home/steam/server-backup.sh 2>&1 >> /home/steam/logs/server-backup.log
+SHELL=/bin/sh
+PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
+
+# m 	h 	dom 	mon 	dow 	user	command
+  * 	1 	 *   	 *   	 *    	steam   /home/steam/backup-avorion.sh 2>&1 >> /home/steam/logs/avorion-backup.log # backup galaxies once an hour
+

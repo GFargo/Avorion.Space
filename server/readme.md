@@ -47,7 +47,21 @@ These steps assume you have already spun up a fresh Ubuntu instance using one of
 Update permissions on `/srv` for steam user;
 `usermod -a -G steam steam` followed by `chmod g+w /srv/`
 
+#### Sever Optimization
 
+https://www.linux.com/blog/5-commands-check-memory-usage-linux
+
+https://www.linuxbabe.com/ubuntu/4-tips-speed-up-ubuntu-16-04
+
+https://sites.google.com/site/easylinuxtipsproject/speed
+
+https://www.linode.com/docs/applications/game-servers/create-an-ark-survival-evolved-server-on-ubuntu-16-04
+
+The following command will show the list of top processes ordered by RAM and CPU use in descendant form (remove the pipeline and head if you want to see the full list): `ps -eo pid,ppid,cmd,%mem,%cpu --sort=-%mem | head`
+
+
+Clear cached memory on Ubuntu;
+`sync; sudo echo 3 > /proc/sys/vm/drop_caches`''
 
 #### Running Server via Screen
 
@@ -60,12 +74,16 @@ Update permissions on `/srv` for steam user;
 You can see all screens currently running via the `$ screen -ls` command, if you wish to re-attach a screen simply use the `screen -r {screen_ID}` command.
 
 
-#### Backing Up Galaxies
+### Backing Up Galaxies
 
-All galaxy information is stored in the `~/.avorion/` directory in the current user's home directory.
+All galaxy information is stored in the `~/.avorion/` directory in the current user's home directory.  Currently things are setup to backup directly to dropbox via the `dropbox-uploader.sh` script.
+
+##### Restoring Backups
+
+Unzipping a gzipped tar file is done via the `tar -xvzf community_images.tar.gz` command.
 
 
-#### Setting Up HTTP Server
+### Setting Up HTTP Server
 
 1. Create new user via `useradd http`
 2. Run `mkdir /var/www/` to create the directory for page
@@ -73,9 +91,21 @@ All galaxy information is stored in the `~/.avorion/` directory in the current u
 
 
 
-#### Custom Services
+### Custom Services
 
 Service files on linux located `/lib/systemd/system/`
 
 Update systemd to apply your changes: `systemctl daemon-reload`
 Enable your new systemd unit and start your ARK server: `systemctl enable ark.service` & `systemctl start ark`
+
+
+
+# Parse arugments
+```
+while getopts f:t: opts; do
+   case ${opts} in
+      n) FROM_VAL=${OPTARG} ;;
+      t) TO_VAL=${OPTARG} ;;
+   esac
+done
+```

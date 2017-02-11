@@ -1,4 +1,14 @@
 #!/bin/sh
+#
+#      ___   ____    ____  ______   .______       __    ______   .__   __.
+#     /   \  \   \  /   / /  __  \  |   _  \     |  |  /  __  \  |  \ |  |
+#    /  ^  \  \   \/   / |  |  |  | |  |_)  |    |  | |  |  |  | |   \|  |
+#   /  /_\  \  \      /  |  |  |  | |      /     |  | |  |  |  | |  . `  |
+#  /  _____  \  \    /   |  `--'  | |  |\  \----.|  | |  `--'  | |  |\   |
+# /__/     \__\  \__/     \______/  | _| `._____||__|  \______/  |__| \__|
+#
+# Git Post-Receive Hook
+# triggered whenever the user pushes up new content to our bare-bone repo
 
 echo "-----"
 echo "Avorion Server Deploy"
