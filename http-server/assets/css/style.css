@@ -1,0 +1,46 @@
+body {
+	display: block;
+	overflow: hidden;
+	height: 100vh;
+	width: 100vh;
+
+	background-image: url('../images/avorion_bg.jpg');
+	background-size: cover;
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-color: #000;
+}
+
+h1,h2,h3,h4,p {
+	font-weight: 100;
+}
+
+h1,h3 {
+	text-shadow:  0 1px 6px #fff;
+}
+
+h3 {
+	margin-top: -8px;
+	margin-bottom: 26px;
+}
+
+p {
+	font-size: 15px;
+	color:  #aeaeae;
+}
+
+.content {
+	margin: auto;
+	position: absolute;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	height: 240px;
+	width: 480px;
+	background-color: rgba(0,0,0,0.6);
+	font-family: 'Roboto', sans-serif;
+	color: #fff;
+	text-align: center;
+	font-size: 1.5em;
+}

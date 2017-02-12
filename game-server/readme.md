@@ -1,9 +1,7 @@
 # Custom Server Script
 
-
 Brazzers240p - https://steamid.io/lookup/STEAM_0:0:21426119
 Griffeo - https://steamid.io/lookup/76561197989153725
-
 
 
 ## Setup
@@ -49,13 +47,13 @@ Update permissions on `/srv` for steam user;
 
 #### Sever Optimization
 
-https://www.linux.com/blog/5-commands-check-memory-usage-linux
-
-https://www.linuxbabe.com/ubuntu/4-tips-speed-up-ubuntu-16-04
-
-https://sites.google.com/site/easylinuxtipsproject/speed
+- [4 Tips to Speed up Ubuntu 16.04](https://www.linuxbabe.com/ubuntu/4-tips-speed-up-ubuntu-16-04)
+- [5 Commands to Check Memory Usage](https://www.linux.com/blog/5-commands-check-memory-usage-linux)
+- [Speed up your Ubuntu!](https://sites.google.com/site/easylinuxtipsproject/speed)
+- [Tweaked.io - Tweaking The GNU/Linux Kernel](https://tweaked.io/guide/kernel/)
 
 https://www.linode.com/docs/applications/game-servers/create-an-ark-survival-evolved-server-on-ubuntu-16-04
+
 
 The following command will show the list of top processes ordered by RAM and CPU use in descendant form (remove the pipeline and head if you want to see the full list): `ps -eo pid,ppid,cmd,%mem,%cpu --sort=-%mem | head`
 
@@ -99,6 +97,11 @@ Update systemd to apply your changes: `systemctl daemon-reload`
 Enable your new systemd unit and start your ARK server: `systemctl enable ark.service` & `systemctl start ark`
 
 
+# FAQ
+
+* Q: How do I keep the server running after I close Terminal?
+	* Using Screens, check the section above on "Running Server via Screen" for more info.
+
 
 # Parse arugments
 ```
@@ -109,3 +112,10 @@ while getopts f:t: opts; do
    esac
 done
 ```
+
+### Resources
+
+- [SteamCMD - Steam Wiki](https://developer.valvesoftware.com/wiki/SteamCMD)
+- [How to Setup your Linode](http://feross.org/how-to-setup-your-linode/)
+- [Linode - Securing Your Server](https://www.linode.com/docs/security/securing-your-server)
+- [Linode - Install SteamCMD for Steam Game Server](https://www.linode.com/docs/applications/game-servers/install-steamcmd-for-a-steam-game-server)
