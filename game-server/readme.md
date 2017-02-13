@@ -52,14 +52,28 @@ Update permissions on `/srv` for steam user;
 - [Speed up your Ubuntu!](https://sites.google.com/site/easylinuxtipsproject/speed)
 - [Tweaked.io - Tweaking The GNU/Linux Kernel](https://tweaked.io/guide/kernel/)
 
-https://www.linode.com/docs/applications/game-servers/create-an-ark-survival-evolved-server-on-ubuntu-16-04
 
 
 The following command will show the list of top processes ordered by RAM and CPU use in descendant form (remove the pipeline and head if you want to see the full list): `ps -eo pid,ppid,cmd,%mem,%cpu --sort=-%mem | head`
 
 
-Clear cached memory on Ubuntu;
-`sync; sudo echo 3 > /proc/sys/vm/drop_caches`''
+###### Open up FS Limits
+
+1. Run the following command to increase the allowed number of open files:
+> `echo "fs.file-max=100000" >> /etc/sysctl.conf && sysctl -p1`
+
+2. Update the hard and soft file limits by running:
+> `echo "* soft nofile 1000000" >> /etc/security/limits.conf`
+> `echo "* hard nofile 1000000" >> /etc/security/limits.conf`
+
+3. Enable PAM limits by issuing this command:
+> `echo "session required pam_limits.so" >> /etc/pam.d/common-session`
+
+###### Clear Memory Cache
+
+Run the following command to clear cached memory on Ubuntu:
+> `sync; sudo echo 3 > /proc/sys/vm/drop_caches`
+
 
 #### Running Server via Screen
 
@@ -70,6 +84,8 @@ Clear cached memory on Ubuntu;
 5. Detach current screen by entering `ctr + a` followed `d`.
 
 You can see all screens currently running via the `$ screen -ls` command, if you wish to re-attach a screen simply use the `screen -r {screen_ID}` command.
+
+### Pinning Server to Specific CPU Threads
 
 
 ### Backing Up Galaxies
@@ -119,3 +135,4 @@ done
 - [How to Setup your Linode](http://feross.org/how-to-setup-your-linode/)
 - [Linode - Securing Your Server](https://www.linode.com/docs/security/securing-your-server)
 - [Linode - Install SteamCMD for Steam Game Server](https://www.linode.com/docs/applications/game-servers/install-steamcmd-for-a-steam-game-server)
+- [Linode - Create an Ark Survival Evolved Server on Ubuntu](https://www.linode.com/docs/applications/game-servers/create-an-ark-survival-evolved-server-on-ubuntu-16-04)

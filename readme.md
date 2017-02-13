@@ -2,18 +2,19 @@
 
 This guide takes you through the steps required to setup your own dedicated server for [Avorion](http://store.steampowered.com/app/445220/).
 
-[Server Website](http://avorion.space)
-[Join us on Discord](https://discord.gg/WafqdAH)
+- [Server Website](http://avorion.space)
+- [Join us on Discord](https://discord.gg/WafqdAH)
 
 
-#### Game Mods
-
+#### Available Game Mods
 
 - [TOOL - Mods Patch Generate & Apply](http://www.avorion.net/forum/index.php/topic,1304.0.html)
 - [Out of Sector Production](http://www.avorion.net/forum/index.php/topic,1322.0.html)
 - [Highlight Players in Sector](http://www.avorion.net/forum/index.php/topic,1286.0.html)
-- [/sethome /inventory commands](http://www.avorion.net/forum/index.php/topic,830.0.html)
+- ['/sethome' & '/inventory' commands](http://www.avorion.net/forum/index.php/topic,830.0.html)
 - [Wreckage Cleanup](http://www.avorion.net/forum/index.php/topic,1034.msg4628.html#msg4628)
+
+
 
 ### Resources:
 
