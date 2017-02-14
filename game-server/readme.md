@@ -47,14 +47,28 @@ Update permissions on `/srv` for steam user;
 
 #### Sever Optimization
 
+
+The following command will show the list of top processes ordered by RAM and CPU use in descendant form (remove the pipeline and head if you want to see the full list): `ps -eo pid,ppid,cmd,%mem,%cpu --sort=-%mem | head`
+
+
 - [4 Tips to Speed up Ubuntu 16.04](https://www.linuxbabe.com/ubuntu/4-tips-speed-up-ubuntu-16-04)
 - [5 Commands to Check Memory Usage](https://www.linux.com/blog/5-commands-check-memory-usage-linux)
 - [Speed up your Ubuntu!](https://sites.google.com/site/easylinuxtipsproject/speed)
 - [Tweaked.io - Tweaking The GNU/Linux Kernel](https://tweaked.io/guide/kernel/)
+- [Optimizing Linux Kernel](http://forums.srcds.com/viewtopic/8378)
+- [How to Update DigitalOcean Server's Kernel](https://www.digitalocean.com/community/tutorials/how-to-update-a-digitalocean-server-s-kernel)
+
+> Ubuntu server 12.04 lts + kernel lowlatency + The affinity to a CPU and a high priority = maximum performance.
 
 
 
-The following command will show the list of top processes ordered by RAM and CPU use in descendant form (remove the pipeline and head if you want to see the full list): `ps -eo pid,ppid,cmd,%mem,%cpu --sort=-%mem | head`
+> General guidelines are that you should always recompile new kernel to at least enable CPU specific optimizations. The stock kernels don't have CPU specific optimizations because they are meant to be run on wide variety of processors.
+
+> The you should also change "pre-emption" to "low-latency desktop" level.
+
+> Then also change the kernel timer to 1000 Hz. People claim that this is needed for 1000 FPS systems, but there's no good explanation really, so just set it to 1000 Hz to fool idiots who think 1000 Hz is the same as 1000 FPS - that also stops them bothering you with stupid questions all the time.
+
+- http://forums.srcds.com/viewtopic/8388
 
 
 ###### Open up FS Limits

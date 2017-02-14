@@ -1,0 +1,51 @@
+{
+	"/crew": {
+		"author": "Aki",
+		"tested_version": "n/a",
+		"url": "http://www.avorion.net/forum/index.php/topic,830.0.html",
+		"description": "Prints build cost of currently boarded ship. Usage: \n /price",
+		"files": [
+			{
+				"file_name":"crew.lua",
+				"url": "https://raw.githubusercontent.com/AvorionCommands/avorion-scripts/master/scripts/commands/crew.lua",
+				"relative_path": "data/scripts/commands/"
+			},
+			{
+				"file_name":"crew.lua",
+				"url": "https://raw.githubusercontent.com/AvorionCommands/avorion-scripts/master/scripts/player/cmd/crew.lua",
+				"relative_path": "data/scripts/player/cmd/crew.lua"
+			},
+		]
+	},
+	"/price": {
+		"author": "Aki",
+		"tested_version": "n/a",
+		"url": "http://www.avorion.net/forum/index.php/topic,830.0.html",
+		"description": "Adds or removes crew to currently boarded ship. Usage: /crew <fill|clear|add> \n /crew add <profession> [amount]",
+		"files": [
+			{
+				"file_name":"price.lua",
+				"url": "https://raw.githubusercontent.com/AvorionCommands/avorion-scripts/master/scripts/commands/price.lua",
+				"relative_path": "data/scripts/commands/"
+			},
+			{
+				"file_name":"price.lua",
+				"url": "https://raw.githubusercontent.com/AvorionCommands/avorion-scripts/master/scripts/player/cmd/price.lua",
+				"relative_path": "data/scripts/player/cmd/"
+			},
+		]
+	},
+	"/inventory": {
+		"author": "Aki",
+		"tested_version": "n/a",
+		"url": "http://www.avorion.net/forum/index.php/topic,830.0.html",
+		"description": "Modifies inventory of a player. Usage: \n /inventory turret <type> [rarity] [material] [tech] [amount] \n /inventory upgrade <script> [rarity] [amount] \n /inventory available <turrets|upgrades|materials|rarities>",
+		"files": [
+			{
+				"file_name": "inventory.lua",
+				"url": "https://raw.githubusercontent.com/AvorionCommands/avorion-scripts/master/scripts/commands/inventory.lua",
+				"relative_path": "data/scripts/commands/"
+			},
+		]
+	}
+}
