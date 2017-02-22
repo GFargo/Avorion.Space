@@ -13,8 +13,9 @@ This file serves as the main mod list powering the installer.  It contains refer
 ##### Example Mod Config Object
 
 ```
-"ModName": {
+{
 	"author": "author_name",
+	"name": "Name of Mod", 
 	"url": "URL for mod homepage",
 	"description": "short description about the mod here",
 	"files": [
