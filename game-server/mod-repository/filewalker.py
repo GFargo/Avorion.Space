@@ -1,42 +1,21 @@
-"""Generate a json file based off a file structure containing json files describing mods."""
+"""Generate a json file based off a file structure containing json files describing mods for the game Avorion."""
 
 from __future__ import print_function
-# from pprint import pprint
-# import io
 import os
 import subprocess
-# import sys
-# import zipfile
-# import datetime
+import time
 import pygit2
 import simplejson
-
-class MyCallbacks(pygit2.RemoteCallbacks):
-    """Inherited class for remote callbacks."""
-
-    # This is not needed at the moment - see comment for push()-method
-    # def credentials(self, url, username_from_url, allowed_types):
-    #     """Credential callback for remote authentication.
-    #
-    #     These are called from pygit2 on various situations and are overriden here.
-    #     """
-    #     userpass = pygit2.UserPass('Strongground', '1234')
-    #     return userpass
-    #
-    # def push_update_reference(self, refname, message):
-    #     """Callback for push progress and success notification from remote."""
-    #     if refname and message:
-    #         print("Got the following from remote: "+refname+": "+message)
 
 class FileWalker(object):
     """Traverse a folder tree and generate a JSON based on folder names and JSON files in the folders."""
 
     def __init__(self, verbose, remote_repository, local_repo_path, output_file_name='modlist.json'):
         """Comment only serves to make PEP happy..."""
-        self.callbacks = MyCallbacks()
         self.verbose = verbose
         self.output_file_name = output_file_name
         local_repo = pygit2.Repository(local_repo_path)
+        local_date = str(time.strftime("%d/%m/%Y"))
         if len(local_repo.remotes) <= 0:
             local_repo.remotes.create('origin', remote_repository)
 
@@ -45,13 +24,13 @@ class FileWalker(object):
             # There where changes in origin, that have been pulled.
             # Now create a new modlist out of the changed file structure in the repo folder.
             self.create_commit(local_repo)
-            if self.verbose:
-                print('Attempted to create commit with merged changes from remote repository')
             self.push(local_repo)
+            if self.verbose:
+                print(local_date+': Changes - rebuild modlist and try to commit and push it.')
         else:
             # Nothing to do here.
             if self.verbose:
-                print('Up to date, do nothing')
+                print(local_date+': No changes, do nothing')
 
     def create_commit(self, repo):
         """Commit the newly generated modlist.json."""
@@ -97,7 +76,7 @@ class FileWalker(object):
                         raise AssertionError('Conflicts, ahhhhh!!')
                     user = repo.default_signature
                     tree = repo.index.write_tree()
-                    commit = repo.create_commit('refs/heads/master', user, user, 'Merge!', tree, [repo.head.target, remote_master_id])
+                    repo.create_commit('refs/heads/master', user, user, 'Merge!', tree, [repo.head.target, remote_master_id])
                     # We need to do this or git CLI will think we are still merging.
                     repo.state_cleanup()
                     return True
@@ -106,12 +85,6 @@ class FileWalker(object):
 
     def push(self, repo):
         """Push the new modlist.json to origin."""
-        # This shit is not working - but isn't throwing any errors either
-        # original call was:
-        # def push(self, repo, remote_name='origin', ref=['refs/heads/master:refs/heads/master']):
-        # for remote in repo.remotes:
-        #     if remote.name == remote_name:
-        #         remote.push(ref, callbacks=self.callbacks)
         # first make sure we have 'master' branch active
         repo.checkout('refs/heads/master')
         # move to repository folder for git command to work properly
