@@ -1,0 +1,13 @@
+// basic colors
+$warm-grey: #e3e1de;
+$grey: #aeaeae;
+$dark-red: #df918e;
+$black: #000;
+$white: #fff;
+$green: #dff0d8;
+
+// contextual definitions
+$background: $warm-grey;
+
+$error-border: lighten($dark-red, 30%);
+$error-font: $dark-red;
