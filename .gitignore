@@ -31,3 +31,5 @@ Temporary Items
 appdata
 
 *.pyc
+
+*.map

@@ -1,0 +1,40 @@
+# general page
+header: "Mod Submission Form"
+description: "Description coming here"
+# form labels
+label_modname: "Name"
+label_author: "Author"
+label_description: "Description"
+label_url: "Website"
+label_mod_version: "Mod-Version"
+label_game_version: "Compatible Game Version"
+label_package: "Is this part of a package?"
+label_package_name: "Package name"
+label_file: "Files & Relative Game Folder Paths"
+# hints
+hint_modname: "Short name of the mod - this is shown as the title. Please keep any long, detailed description etc. out of it and keep it unique. You don't want to be the fifth 'Turret Buff' mod, right?"
+hint_author: "Your name, handle or nickname, up to you. This is shown as mod creator. You can add multiple authors. You can also reference any colaborators/people who helped you here."
+hint_description: "A description of the mod. This can be 2-3 sentences to describe what your mod does, but you are free to add any length of documentation. Keep in mind it is shown in a potentially small space inside the mod manager and thus very large texts may be hard to read. In-depth documentation should sit either in your repository or Avorion forum."
+hint_url: "A URL to your mod. It can be an Avorium forum thread, Github wiki, or any other page describing your mod."
+hint_mod_version: "The version number of your mod. You choose any number. If you leave it blank, it will show '1.0' as default."
+hint_game_version: "The version of the game, with which your mod works. If you don't know for sure, leave it blank."
+hint_package: "If you have created several mods that belong together, they can be distributed as 'package'. Mark this checkbox and supply the name of your package, if you have. Your new mod will then be added to the package."
+hint_file: "Add links to all the files the mod consists of, here. You may add as many files as you wish, but must add at least one. Ensure that your link points to a *.lua-file. The second field is for relative game folder path. It describes where your file should be placed inside the Avorion game folder structure to work as intended by you. Use paths relative to the 'Avorion/data' folder."
+# buttons
+label_submit: "Submit Mod"
+# errors
+generic_header: "Undefined Fail."
+generic_description: "An error occured. Sorry! We cannot determine what went wrong. Best to try and just reload this page."
+404_header: "Page not found!"
+404_description: "If you didn't dabble in the URLs yourself, this shouldn't have happened."
+500_header: "Internal error"
+500_description: "See console."
+# form validation
+validation_error_invalid-char: "Only numbers and letters (upper- and lowercase) are allowed. You may also use underscore and dash: _ -"
+validation_error_no-zero-length: "Please enter something in this field."
+validation_error_invalid-url: "URL invalid. Only Github, Bitbucket, Gitlab and Avorion-forum URLs are allowed here."
+validation_error_no-file-given: "Please enter a valid link to your mod file into this field. It can be either a *.lua file directly or an archive (*.zip, *.rar)."
+validation_error_invalid-version: "Only numbers and letters (upper- and lowercase) are allowed. You may also use underscore, dot and dash: _ - ."
+# placeholders
+placeholder_gamepath: "Game path for your file, relative to Avorion/data"
+placeholder_file: "URL to your file"

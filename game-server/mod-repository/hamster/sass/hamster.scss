@@ -1,0 +1,68 @@
+@import 'bootstrap/mixins';
+@import 'colors';
+
+body {
+  padding: 15px 0 0;
+}
+
+.container {
+  max-width: 1024px;
+}
+
+.control-label {
+  &.validation-error {
+    text-align: left;
+  }
+}
+
+// Form
+.form-group {
+  border-top: 1px solid #ddd;
+  padding-top: 10px;
+  >* {
+    min-height: 34px;
+  }
+  &.file {
+    .clone-input {
+      margin-top: 15px;
+      float: left;
+    }
+    [id^='file_file_'],
+    [id^='gamepath'] {
+      width: 49%;
+      margin-top: 15px;
+    }
+    [id^='file_file_'] {
+      float: left;
+      // Use this to see the ordering of the two elements more clearly
+      // background-color: rgb(255, 0, 0);
+      // color: rgb(255, 255, 255);
+    }
+    [id^='gamepath'] {
+      float: right;
+      // Use this to see the ordering of the two elements more clearly
+      // background-color: rgb(0, 0, 255);
+      // color: rgb(255, 255, 255);
+    }
+  }
+  label {
+    padding-top: 8px;
+    text-align: right;
+  }
+  input {
+    &[type='checkbox'] {
+      margin-top: 10px;
+    }
+  }
+  .help-block {
+    font-size: 8pt;
+  }
+}
+
+// Utility classes to visually hide something and fade in
+.vishidden {
+  opacity: 0;
+}
+.visfade {
+  transition: opacity 1s ease;
+}
