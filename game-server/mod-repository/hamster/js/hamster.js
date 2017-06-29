@@ -22,17 +22,50 @@
     }
   }
 
+  /*
+  * @description Helper function to retrieve one dict value based on given key.
+  *
+  * A value for the key is given, for which the value is returned from the
+  * given dictionary. Both values are mandatory.
+  * If the key is not found, return false.
+  *
+  * @param key String
+  * @param dict Array
+  */
+  $.fn.getValueFor = function (key, dict) {
+    console.log('got call to search "' + key + '" in "' + dict.toString() + '"')
+    var result = false
+    dict.forEach(function (currentEntry) {
+      console.log('Check if "' + currentEntry.key.toString() + '" is the searched key')
+      if (currentEntry.key === key.toString()) {
+        console.log('Success! Value for key "' + key + '" is "' + currentEntry.value + '"')
+        result = currentEntry.value
+      }
+    })
+    if (result === false) {
+      console.log('Could not find the key. Returning false.')
+    }
+    return result
+  }
+
   $.fn.initGUI = function () {
     // init dom elements
     let successAlert = '.alert.alert-success'
     let validationAlert = '.alert.alert-danger.validation'
     let currentUrl = document.location.href.split('?')
+    let baseURL = currentUrl[0]
+    let tempParams = currentUrl[1].split('&')
+    var urlParams = []
+    tempParams.forEach(function (currentParam) {
+      let tempParam = currentParam.split('=')
+      let tempKey = tempParam[0].toString()
+      let tempValue = tempParam[1].toString()
+      urlParams.push({
+        key: tempKey,
+        value: tempValue
+      })
+    }, this)
     var iterationCounter = 0
-    if (currentUrl.length > 1) {
-      var urlParams = currentUrl[1].split('=')
-    } else {
-      urlParams = {}
-    }
     let mainForm = {}
     mainForm.form = $('form.mod-submit')
     mainForm.addInputButton = mainForm.form + $('.add-file-input')
@@ -44,19 +77,26 @@
     }
 
     function handleAlerts () {
-      // show different alerts and scroll to top if one is shown
-      if ($(validationAlert).length > 0 || $(successAlert).length > 0 && urlParams[1] === 'success') {
+      // show different alerts and scroll to top if one is shown.
+      // Success alerts stay while error alerts are hidden after some time.
+      if ($(validationAlert).length > 0 || $(successAlert).length > 0 && $().getValueFor('submit', urlParams) === 'success') {
         // Assume validation error has happened and alert should be shown
         $('body').animate({ scrollTop: 0 }, 'slow', 'easeOutSine')
         $('.alert').removeClass('vishidden')
       }
-      // hide success alert after a few seconds
+      // Scroll to top if success alert is shown
       if ($(successAlert + ':visible')) {
         $('body').animate({ scrollTop: 0 }, 'slow', 'easeOutSine')
-        setTimeout(function () {
-          $(successAlert + ':visible').addClass('vishidden')
-        }, 5000)
       }
+    }
+
+    function replaceEditURL (placeholder) {
+      // replaces the given placeholder in the success alert after mod submission with hash
+      // from url parameter.
+      let modHash = $().getValueFor('hash', urlParams)
+      let modEditURL = baseURL + 'edit_mod?securekey=' + modHash
+      var text = $(successAlert).text()
+      $(successAlert).text(text.replace(placeholder, modEditURL))
     }
 
     function handlePackageName () {
@@ -142,6 +182,8 @@
       })
     }
 
+    // Dynamically add mod-change URL to success-alert
+    replaceEditURL('{MOD_EDIT_URL}')
     // handle the showing and fading of alerts
     handleAlerts()
     // if validation error happened for one bools associated element, don't hide it

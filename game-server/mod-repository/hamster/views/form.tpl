@@ -26,7 +26,7 @@
 % if invalidation_field:
 %   show_notification('danger', 'Input error!', 'Please check the form, it seems there was an error.', ['validation', 'vishidden', 'visfade'])
 % else:
-%   show_notification('success', 'Mod submitted!', 'Your mod will be available via Avorion Mod Manager within the next 5-10 minutes.', ['vishidden', 'visfade'])
+%   show_notification('success', 'Mod submitted!', 'Your mod will be available via Avorion Mod Manager within the next 5-10 minutes. If you ever want to edit or delete your mod, please visit this URL: {MOD_EDIT_URL}. Keep it safe like a password!', ['vishidden', 'visfade'])
 % end
 
 <!-- Input Element begin -->
@@ -109,7 +109,7 @@
     %   end
     <input tabindex="{{tabindex}}" type="text" name="{{assoc_element_id}}" id="{{assoc_element_id}}" data-associated-with="#{{element_id}}" class="form-control" autofocus="" {{value}}>
     % end
-    
+
     % # <!-- If additional input file and associated text elements where created by user before the submit, create them again on the fly -->
     % if invalidation_field and type == 'file':
     %   for attribute in originalInput:
