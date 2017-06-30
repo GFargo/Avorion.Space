@@ -54,17 +54,19 @@
     let validationAlert = '.alert.alert-danger.validation'
     let currentUrl = document.location.href.split('?')
     let baseURL = currentUrl[0]
-    let tempParams = currentUrl[1].split('&')
-    var urlParams = []
-    tempParams.forEach(function (currentParam) {
-      let tempParam = currentParam.split('=')
-      let tempKey = tempParam[0].toString()
-      let tempValue = tempParam[1].toString()
-      urlParams.push({
-        key: tempKey,
-        value: tempValue
-      })
-    }, this)
+    let urlParams = []
+    if (currentUrl.length > 1) {
+      var tempParams = currentUrl[1].split('&')
+      tempParams.forEach(function (currentParam) {
+        let tempParam = currentParam.split('=')
+        let tempKey = tempParam[0].toString()
+        let tempValue = tempParam[1].toString()
+        urlParams.push({
+          key: tempKey,
+          value: tempValue
+        })
+      }, this)
+    }
     var iterationCounter = 0
     let mainForm = {}
     mainForm.form = $('form.mod-submit')

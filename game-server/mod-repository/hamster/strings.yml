@@ -35,6 +35,7 @@ validation_error_no-zero-length: "Please enter something in this field."
 validation_error_invalid-url: "URL invalid. Only Github, Bitbucket, Gitlab and Avorion-forum URLs are allowed here."
 validation_error_no-file-given: "Please enter a valid link to your mod file into this field. It can be either a *.lua file directly or an archive (*.zip, *.rar)."
 validation_error_invalid-version: "Only numbers and letters (upper- and lowercase) are allowed. You may also use underscore, dot and dash: _ - ."
+validation_error_no-mod-overwrite: "There is already a mod with this exact name. If you are the author of this mod, please use your edit-link that was displayed to you after successful submission."
 # placeholders
 placeholder_gamepath: "Game path for your file, relative to Avorion/data"
 placeholder_file: "URL to your file"
